@@ -1,6 +1,6 @@
 import { Form, Button, Container } from 'react-bootstrap'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
 
 export default function Login() {
@@ -8,13 +8,18 @@ export default function Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
-    const { signup } = useAuth()
+    
+    const { login } = useAuth()
+    const navigate = useNavigate()
 
     const handleSubmit = async e => {
         e.preventDefault()
         try {
             setLoading(true)
-            await signup(email, password)
+            await login(email, password)
+            setEmail('')
+            setPassword('')
+            navigate('/')
         } catch (error) {
             console.log(error)
         } finally {
