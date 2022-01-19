@@ -10,14 +10,14 @@ const {
     REACT_APP_appId
 } = process.env
 
-export const firebaseConfig = {
+const app = initializeApp({
   apiKey: REACT_APP_apiKey,
   authDomain: REACT_APP_authDomain,
   projectId: REACT_APP_projectId,
   storageBucket: REACT_APP_storageBucket,
   messagingSenderId: REACT_APP_messagingSenderId,
   appId: REACT_APP_appId
-}
+})
 
-export const app = initializeApp(firebaseConfig)
 export const auth = getAuth(app) 
+export default app

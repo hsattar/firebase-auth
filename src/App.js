@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import Index from "./components.js/Index"
-import Register from "./components.js/Register"
-import Login from "./components.js/Login"
-import { AuthProvider } from './contexts/AuthContext'
+import Index from "./components/Index"
+import Register from "./components/Register"
+import Login from "./components/Login"
+import { AuthProvider } from "./contexts/AuthContext"
 
 export default function App() {
 
