@@ -8,7 +8,7 @@ export default function Register() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
-    const { signup, currentUser } = useAuth()
+    const { signup } = useAuth()
 
     const handleSubmit = async e => {
         e.preventDefault()
@@ -26,7 +26,6 @@ export default function Register() {
         <Container className="d-flex flex-column justify-content-center align-items-center w-50" style={{ minHeight: "100vh"}}>
             <Form onSubmit={handleSubmit} className="w-100 border p-4">
                 <h2>Register</h2>
-                {currentUser.email}
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.target.value)} />
